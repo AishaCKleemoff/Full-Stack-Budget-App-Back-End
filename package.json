@@ -1,11 +1,16 @@
 {
   "name": "full-stack-budget-app-back-end",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Budget App Project, mod4 Pursuit",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "AC Kleemoff",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1"
+  }
 }
