@@ -19,7 +19,7 @@ transactions.get("/", (req, res) => {
 transactions.get("/:arrayIndex", (req, res) => {
     console.log(req.params);
     const { arrayIndex } = req.params;
-    if (transactionsData[dataIndex]) {
+    if (transactionsData[arrayIndex]) {
         res.json(transactionsData[arrayIndex])
     } else {
         res.status(404).send("no transaction found - sorry");

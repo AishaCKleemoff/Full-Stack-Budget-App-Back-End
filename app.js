@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
   res.send("Welcome to Budgeting App");
 });
 
-app.use("/transactions", transController);
+app.use("/transactions", transactionsController);
 
 app.get('*', (req, res) => {
   res.status(404).json({ error: 'Page not found' });
