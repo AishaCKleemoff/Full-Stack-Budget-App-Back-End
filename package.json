@@ -1,6 +1,9 @@
 {
   "name": "full-stack-budget-app-back-end",
   "version": "1.0.0",
+  "engines": {
+    "node": "17.5.0"
+  },
   "description": "Budget App Project, mod4 Pursuit",
   "main": "app.js",
   "scripts": {
