@@ -14,7 +14,7 @@ const transactionsController = require("./controllers/transactionsController.js"
 
 // ROUTES
 app.get("/", (req, res) => {
-  res.send("Welcome to Budgeting App");
+  res.send("💰Welcome to AC's Budgeting App💵");
 });
 
 app.use("/transactions", transactionsController);
