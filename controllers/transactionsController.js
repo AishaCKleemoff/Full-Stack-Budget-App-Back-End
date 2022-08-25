@@ -51,9 +51,9 @@ transactions.put('/:arrayIndex', (req, res) => {
     if(transactionsData[arrayIndex]) {
         transactionsData[arrayIndex] = req.body;
         res.status(200).json(transactionsData[arrayIndex]);
-    } else {
-        res.redirect('/*');
-    }
+    // } else {
+    //     res.redirect('/*');
+    // }
 })
 
 
