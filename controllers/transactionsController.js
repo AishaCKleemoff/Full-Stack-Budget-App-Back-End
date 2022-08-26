@@ -16,18 +16,18 @@ transactions.get("/", (req, res) => {
 
 });
 // SHOW ROUTE
-transactions.get("/:arrayIndex", (req, res) => {
+transactions.get('/:arrayIndex', (req, res) => {
     console.log(req.params);
     const { arrayIndex } = req.params;
     if (transactionsData[arrayIndex]) {
-        res.json(transactionsData[arrayIndex])
+        res.json(transactionsData[arrayIndex]);
     } else {
-        res.status(404).send("no transaction found - sorry");
-    } 
-})
+        res.redirect('/*');
+    }
+});
 
 // CREATE ROUTE
-transactions.post("/", validateURL, (req, res) => {
+transactions.post('/', validateURL, (req, res) => {
     transactionsData.push(req.body);
     res.json(transactionsData[transactionsData.length - 1]);
 });
@@ -37,26 +37,23 @@ transactions.delete("/:arrayIndex", (req, res)=> {
     const { arrayIndex } = req.params;
     if (transactionsData[arrayIndex]) {
         const deletedtransaction = transactionsData.splice(arrayIndex, 1)
-        res.status(200).json(deletedtransaction)
+        res.status(200).json(deletedtransaction);
+    } else {
+        res.redirect('/*');
+    }  
+});
+
+// UPDATE ROUTEstraight
+transactions.put('/:arrayIndex', (req, res) => {
+    const { arrayIndex } = req.params;
+    if (transactionsData[arrayIndex]) {
+        transactionsData[arrayIndex] = req.body;
+        res.status(200).json(transactionsData[arrayIndex]);
     } else {
         res.redirect('/*');
     }
-    
-    
 });
 
-// UPDATE ROUTE
-transactions.put('/:arrayIndex', (req, res) => {
-    const { arrayIndex } = req.params;
-    if(transactionsData[arrayIndex]) {
-        transactionsData[arrayIndex] = req.body;
-        res.status(200).json(transactionsData[arrayIndex]);
-    // } else {
-    //     res.redirect('/*');
-    // }
-})
 
 
-
-module.exports = transactions
-// ^^ let's node.js which code to export. Also other files are given permission to access the code being exported.
+module.exports = transactions;
